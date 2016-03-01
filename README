@@ -1,4 +1,9 @@
 Go is example from the Go codewalk - will be doing same functionality (read input
 and generate text from that input), but idiomatic in Nim version.
 
-Will implement buffered I/O using the lexbase and streams packages.
+Will implement buffered I/O using the lexbase and streams packages, and set up
+tests using the unittest package. Nimscript (config.nims file) will be used to
+configure package build / test commands.
+
+To illustrate use of generics, will implement queue data structure to store
+prefixes.
