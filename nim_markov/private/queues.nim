@@ -23,13 +23,13 @@ type
     head, tail: indexKey[Length]
     count: int
 
-  Queue[T; Length: static[int]] = ref QueueImpl[T,Length]
+  Queue*[T; Length: static[int]] = ref QueueImpl[T,Length]
 
 # Functions that are only one statement can be 
-proc isFull(q: Queue): bool = q.count == q.Length
-proc isEmpty(q: Queue): bool = q.count == 0
+proc isFull*(q: Queue): bool = q.count == q.Length
+proc isEmpty*(q: Queue): bool = q.count == 0
 
-proc newQueue(T: typedesc, N: static[int]): Queue[T,N] =
+proc newQueue*(T: typedesc, N: static[int]): Queue[T,N] =
   # Initialize queue and return; the 'result' variable is a special variable in
   # Nim that holds the return value of a function.  
   new(result)
@@ -39,7 +39,7 @@ proc newQueue(T: typedesc, N: static[int]): Queue[T,N] =
   # We don't need to initialize the array; it's already initialized as part of the type
   assert(result.internalArray.len == N)
 
-proc enqueue[T,N](q: Queue[T,N],input: T) =
+proc enqueue*[T,N](q: Queue[T,N],input: T) =
   # Add item to queue and keep track of the count
   if q.isFull:
     raise newException(QueueOverflow,"Cannot queue new item - queue is full.")
@@ -49,7 +49,7 @@ proc enqueue[T,N](q: Queue[T,N],input: T) =
   # Update tail and make sure that within bounds of array
   q.tail = (q.tail + 1) mod q.Length
 
-proc dequeue[T,N](q: Queue[T,N]): T =
+proc dequeue*[T,N](q: Queue[T,N]): T =
   if q.isEmpty:
     raise newException(QueueUnderflow, "Cannot dequeue - queue is empty.")
 
