@@ -1,14 +1,31 @@
 import private.io, private.parser
+
 import tables
 import parseopt
+import streams
+import os
+
+import docopt
+
+const docString = """
+Markov chain for input text
+
+Usage:
+  nim_markov train <input_file> [-o=<output_file>]
+  nim_markov predict <model_file> [starting_word]
+  nim_markov (-h | --help)
+  nim_markov --version
+
+Options:
+  -h --help          Show this screen.
+  --version          Show version.
+  -o=<output_file>   Path to store trained model [default: output.mod].
+"""
 
 proc main()=
-  # Handle argument parsing
-  # Get input stream - STDIN by default, file if supplied.  Fail if cannot open.
-  # Stream in words and create prefix objects with suffixes
-  # Close file when done reading
-  # Generate text of specified length, write streaming to STDOUT
-  echo "I ran"
+  let args = docopt(docString, version="Nim Markov 0.1")
+  echo args
+
 
 when isMainModule:
   main()

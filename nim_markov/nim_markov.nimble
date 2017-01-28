@@ -7,4 +7,5 @@ license       = "MIT"
 
 # Dependencies
 
-requires "nim >= 0.13.1"
+requires "nim >= 0.16.0"
+reuires "docopt >= 0.6.4"
