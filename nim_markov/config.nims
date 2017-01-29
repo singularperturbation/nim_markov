@@ -5,7 +5,6 @@ task build, "Compile the project":
 
 # TODO - add a test directory with unittest
 task tests, "Run all tests":
-    exec "nim c -r private/queues"
     exec "nim c -r nim_markov"
     setCommand "nop"
 
@@ -15,5 +14,5 @@ task documentation, "Generate documentation":
     setCommand "nop"
 
 task clean, "Remove all generated files":
-    exec "rm -rf docout nim_markov private/queues"
+    exec "rm -rf docout nim_markov"
     setCommand "nop"
