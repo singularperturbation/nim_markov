@@ -25,7 +25,7 @@ proc newStemmer*(language: string = "english"): InternalStemmer =
 
   # Has to check for supported languages on each time creating stemmer- but
   # creating a stemmer should be rare.
-  var languages = getLanguages()
+  let languages = getLanguages()
 
   if not (language.toLower in languages):
     raise newException(InvalidLanguageError,
