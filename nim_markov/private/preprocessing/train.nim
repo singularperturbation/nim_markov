@@ -19,7 +19,7 @@ iterator readAllWords(s: Stream): string {.inline.} =
       yield word
 
 
-proc doTraining*(input: Stream, prefix_length = 2): Table[string, seq[string]] =
+proc doTraining*(input: Stream, prefix_length = 2): TableRef[string, seq[string]] =
   ## Read input data line-by-line from a stream and do processing on it.
   ## Need to do:
   ##  - Input tokenization
@@ -51,3 +51,5 @@ proc doTraining*(input: Stream, prefix_length = 2): Table[string, seq[string]] =
     # Form new prefix - pop first element of queue, and add current word to end
     discard prefix.popFirst()
     prefix.addLast(word)
+
+  chain
