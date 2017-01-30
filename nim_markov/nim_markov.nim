@@ -1,6 +1,8 @@
 import private.preprocessing.train
 import private.predict
 
+export predict, loadModel, saveModel, doTraining
+
 import tables
 import parseopt
 import streams
