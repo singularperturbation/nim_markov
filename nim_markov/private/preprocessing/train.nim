@@ -10,6 +10,8 @@ import tables
 
 from math import nextPowerOfTwo
 
+export buildPrefix, saveModel, loadModel
+
 iterator readAllWords(s: Stream): string {.inline.} =
   ## Internal helper to get words from the stream instead of by line
   var line = newStringOfCap(100)

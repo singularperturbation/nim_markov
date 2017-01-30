@@ -1,3 +1,6 @@
+## Saves / loads Markov chain model to file.  In future, save this as an object
+## with the prefix length so that we can verify it is the same as what is expected
+## when loading the model.
 import tables
 import streams
 import marshal
