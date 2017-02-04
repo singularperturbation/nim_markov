@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.2.0"
 author        = "Sloane Simmons"
 description   = "Nim Markov Chain text generator"
 license       = "MIT"
